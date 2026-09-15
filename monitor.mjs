@@ -340,6 +340,7 @@ async function notify(title, message) {
     if (!r.ok) log(line); else if (VERBOSE) log(line);
     try { appendFileSync(at(cfg.paths.notifyLog || 'logs/notify.log'), `[${stamp()}] ${line}\n`); } catch { /* 忽略 */ }
   }
+  return results;
 }
 
 // ---------------------------------------------------------------- 状态
@@ -466,8 +467,16 @@ async function main() {
   }
 
   if (flag('test-notify')) {
-    await notify(`${cfg.notify.titlePrefix} · 测试`, '通知通道正常 ✅\n这条是测试消息。');
+    const results = await notify(`${cfg.notify.titlePrefix} · 测试`, '通知通道正常 ✅\n这条是测试消息。');
+    for (const r of results || []) {
+      console.log(`  通道 ${r.channel}: ${r.ok ? 'OK' : 'FAIL'} ${r.detail || ''}`);
+    }
     log('已发送测试通知。');
+    // 通道全部失败时明确失败，避免 CI 显示 "success" 却其实什么都没发出去
+    if (results && results.length && results.every((r) => !r.ok)) {
+      log('所有通道均发送失败。');
+      process.exit(1);
+    }
     return;
   }
 
