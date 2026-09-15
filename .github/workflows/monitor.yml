@@ -8,6 +8,11 @@ on:
   schedule:
     - cron: '*/5 * * * *'
   workflow_dispatch:
+    inputs:
+      test:
+        description: 'Send a test notification instead of polling (used to verify the WeChat channel)'
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -28,7 +33,13 @@ jobs:
         env:
           WXPUSHER_SPT: ${{ secrets.WXPUSHER_SPT }}
           NOTIFY_CHANNELS: wxpusher
-        run: node monitor.mjs --once --verbose
+        run: |
+          if [ "${{ inputs.test }}" = "true" ]; then
+            echo "== test-notify mode: 只发一条测试推送，不轮询 =="
+            node monitor.mjs --test-notify
+          else
+            node monitor.mjs --once --verbose
+          fi
 
       - name: Persist state
         run: |
