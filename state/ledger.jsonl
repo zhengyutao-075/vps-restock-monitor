@@ -3,3 +3,4 @@
 {"ts":"2026-09-15T14:07:33.930Z","kind":"event","id":null,"line":"【变化】标记 有货→缺货; 状态 ✅ 有货→❌ 缺货 ⚠️该配置已经被抢光，此消息3分钟后删除 | VMISS·VMISS - US.LA.CMIN2.Core·CMIN2 · 10 CAD/月 (月均7.2USD) [超低价(月均 <= 10)]"}
 {"ts":"2026-09-15T14:17:34.829Z","kind":"removed-soldout-silent","id":"1207","line":"VMISS·VMISS - US.LA.CMIN2.Core·CMIN2 · 10 CAD/月 (月均7.2USD) [超低价(月均 <= 10)] · 该配置已经被抢光，此消息3分钟后删除"}
 {"ts":"2026-09-15T14:53:22.098Z","kind":"event","id":null,"line":"【新上架】VMISS·VMISS - US.LA.CMIN2.Basic·CMIN2 · 5 CAD/月 (月均3.6USD) [超低价(月均 <= 10)]"}
+{"ts":"2026-09-15T14:58:32.201Z","kind":"event","id":null,"line":"【变化】标记 有货→缺货; 状态 ✅ 有货→❌ 缺货 ⚠️该配置已经被抢光，此消息3分钟后删除 | VMISS·VMISS - US.LA.CMIN2.Basic·CMIN2 · 5 CAD/月 (月均3.6USD) [超低价(月均 <= 10)]"}

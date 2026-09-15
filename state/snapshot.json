@@ -352,8 +352,8 @@
   "1236": {
     "id": "1236",
     "postedAt": "2026-09-15T14:48:53+00:00",
-    "edited": false,
-    "marker": "有货",
+    "edited": true,
+    "marker": "缺货",
     "vendor": "VMISS",
     "model": "VMISS - US.LA.CMIN2.Basic",
     "cpu": "1 vCPU",
@@ -365,8 +365,8 @@
     "ipType": "原生机房IP",
     "line": "CMIN2",
     "coupon": "10%OFF",
-    "statusText": "✅ 有货",
-    "alert": "",
+    "statusText": "❌ 缺货",
+    "alert": "该配置已经被抢光，此消息3分钟后删除",
     "buyUrl": "https://app.vmiss.com",
     "priceRaw": "5 CAD/月",
     "priceValue": 5,
@@ -381,6 +381,6 @@
       }
     ],
     "reportable": true,
-    "fp": "981b2567bbcaadb3"
+    "fp": "dd81a5bcdf9828ed"
   }
 }
