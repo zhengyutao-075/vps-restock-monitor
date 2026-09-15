@@ -28,15 +28,37 @@ node monitor.mjs --status
 powershell -NoProfile -ExecutionPolicy Bypass -File stop.ps1
 ```
 
-## 当前部署形态（双通道，互不重复）
+## 当前部署形态（三层，各出各的长处）
 
 ```
 ┌─ 本机 Windows 守护进程（60 秒）──→ Windows 桌面通知      ← 你在电脑前时的快速通道
-│    state-local/  （不提交，保持 git 工作区干净）
+│    state-local/（不提交，保持 git 工作区干净）
 │
-└─ GitHub Actions 定时任务（5 分钟）→ WxPusher → 微信       ← 你关机/关代理时的兜底
-     state/        （每轮提交回仓库，同时避免 60 天不活跃被停用）
+├─ VPS 38.207.189.170 systemd timer（5 分钟）               ← 只当「闹钟」
+│    调 GitHub API 触发 workflow_dispatch
+│    /etc/vps-monitor-trigger.env（600）存 GITHUB_TOKEN
+│
+└─ GitHub Actions workflow → WxPusher → 微信                ← 你关机/关代理时的兜底
+     state/（每轮提交回仓库）
 ```
+
+### 为什么绕这么一圈（反直觉，改之前务必先读）
+
+1. **GitHub 自带的 `schedule` cron 对本仓库不生效。**
+   实测：建仓后 68 分钟、跨 13 个 5 分钟边界、**0 次触发**，而 workflow 状态是 `active`、
+   Actions 总开关是 `enabled`；手动 `workflow_dispatch` 却完全正常。
+   → GitHub 的调度器是「尽力而为」，无法从外部修复。**所以定时改由 VPS 承担。**
+
+2. **这台 VPS 的 IP 被双向黑洞。**
+   不只是「中国 → 它」不通，**「它 → 中国」也不通**。实测从 VPS：
+   - `t.me` ✅ 200/667ms、`ntfy.sh` ✅ 200、`api.telegram.org` ✅ 302、`github.com` ✅ 200
+   - `wxpusher.zjiecode.com`(124.222.196.7) ❌ 超时、`sctapi.ftqq.com` ❌、`www.pushplus.plus` ❌
+   → WxPusher / Server酱 / PushPlus **全在国内**，所以 **VPS 推不了微信**，
+     它只剩「可靠定时器」这一个用途（触发 `api.github.com` 毫无问题）。
+
+3. **分工**：**VPS 出「准时」，GitHub 出「一个能连到中国的 IP」。**
+
+> 附带结论：这台 VPS 作为翻墙代理同样是废的（IP 双向被墙）。
 
 | 项目 | 值 |
 |---|---|
@@ -44,6 +66,10 @@ powershell -NoProfile -ExecutionPolicy Bypass -File stop.ps1
 | 推送通道 | WxPusher 极简推送 SPT（无需注册 / 无需实名） |
 | 密钥存放 | GitHub Secret `WXPUSHER_SPT` —— **绝不写进 `config.json`**（公开仓库会泄漏） |
 | 本机通道 | 仅 `windows`；云端由 `NOTIFY_CHANNELS=wxpusher` 覆盖 → **同一事件不会重复推送** |
+| VPS 密钥 | `/etc/vps-monitor-trigger.env`（权限 600，仅 root 可读）|
+| VPS 定时器 | 查看 `systemctl status vps-monitor-trigger.timer`；停止 `systemctl disable --now vps-monitor-trigger.timer` |
+| VPS 触发脚本 | `/usr/local/bin/trigger-monitor.sh`（可手动执行一次以立即触发）|
+| VPS 上的 Node | `/opt/nodejs/bin/node`（v22 官方静态二进制，已软链到 `/usr/local/bin/node`）|
 
 ### 常用操作
 
