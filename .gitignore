@@ -1,0 +1,4 @@
+logs/
+state/monitor.pid
+state/*.bak
+node_modules/

@@ -1,0 +1,43 @@
+name: VPS restock monitor
+
+# 云端兜底：即使你的 Windows 关机 / 代理没开，也照常监控并推送到微信。
+# 注意：公开仓库的 Actions 免费用量不限；私有仓库受免费额度限制（按分钟向上取整），
+#      建议公开仓库用 */5，私有仓库把 cron 放宽到 */30。
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# 避免两次轮询重叠、互相覆盖 state
+concurrency:
+  group: vps-monitor
+  cancel-in-progress: false
+
+jobs:
+  poll:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Poll once
+        env:
+          WXPUSHER_SPT: ${{ secrets.WXPUSHER_SPT }}
+          NOTIFY_CHANNELS: wxpusher
+        run: node monitor.mjs --once --verbose
+
+      - name: Persist state
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A state
+          if git diff --cached --quiet; then
+            echo "state unchanged"
+          else
+            git commit -m "state: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            git push
+          fi

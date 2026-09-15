@@ -1,0 +1,63 @@
+{
+  "channel": "vps_moniter",
+  "previewUrl": "https://t.me/s/vps_moniter",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
+
+  "intervalSeconds": 60,
+  "requestTimeoutMs": 15000,
+  "retry": { "attempts": 3, "backoffMs": 3000 },
+  "consecutiveFailureAlert": 5,
+  "heartbeatCycles": 10,
+
+  "notifyOnStartupBaseline": false,
+  "suppressRemovalWhenSoldOut": true,
+  "stock": { "outOfStockMarkers": ["缺货", "无货", "售罄", "抢光"] },
+
+  "categories": [
+    {
+      "id": "three-net",
+      "label": "三网优化(移动/电信/联通)",
+      "enabled": true,
+      "match": { "lineRequireAll": ["CN2GIA", "9929", "CMIN2"] }
+    },
+    {
+      "id": "ct-cu",
+      "label": "电信/联通优质线路",
+      "enabled": true,
+      "match": { "lineRequireAny": ["CN2GIA", "CN2", "9929", "4837"] }
+    },
+    {
+      "id": "ultra-low",
+      "label": "超低价(月均 <= 10)",
+      "enabled": true,
+      "match": { "maxMonthlyPrice": 10, "currency": "USD" }
+    }
+  ],
+
+  "regions": {
+    "mode": "allow",
+    "list": ["洛杉矶", "US.LA"]
+  },
+
+  "fx": { "USD": 1, "CAD": 0.72, "CNY": 0.14, "EUR": 1.08, "GBP": 1.27 },
+
+  "notify": {
+    "titlePrefix": "VPS 补货监控",
+    "sound": true,
+    "maxPerRun": 8,
+    "channels": ["windows"],
+    "wxpusher": { "spt": "" },
+    "pushplus": { "token": "" },
+    "ntfy": { "topic": "" }
+  },
+
+  "paths": {
+    "stateDir": "state",
+    "logDir": "logs",
+    "snapshot": "state/snapshot.json",
+    "ledger": "state/ledger.jsonl",
+    "log": "logs/monitor.log",
+    "notifyLog": "logs/notify.log",
+    "pid": "state/monitor.pid"
+  }
+}
