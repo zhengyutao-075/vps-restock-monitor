@@ -276,39 +276,5 @@
     "categories": [],
     "reportable": true,
     "fp": "f87752d68863d632"
-  },
-  "1241": {
-    "id": "1241",
-    "postedAt": "2026-09-15T21:35:12+00:00",
-    "edited": true,
-    "marker": "缺货",
-    "vendor": "VMISS",
-    "model": "VMISS - US.LA.CMIN2.Basic",
-    "cpu": "1 vCPU",
-    "ram": "1GB",
-    "disk": "10GB SSD",
-    "bandwidth": "200Mbps",
-    "traffic": "400GB/月",
-    "region": "洛杉矶",
-    "ipType": "原生机房IP",
-    "line": "CMIN2",
-    "coupon": "10%OFF",
-    "statusText": "❌ 缺货",
-    "alert": "该配置已经被抢光，此消息3分钟后删除",
-    "buyUrl": "https://app.vmiss.com",
-    "priceRaw": "5 CAD/月",
-    "priceValue": 5,
-    "priceCurrency": "CAD",
-    "pricePeriod": "月",
-    "monthlyLocal": 5,
-    "monthlyUSD": 3.6,
-    "categories": [
-      {
-        "id": "ultra-low",
-        "label": "超低价(月均 <= 10)"
-      }
-    ],
-    "reportable": true,
-    "fp": "dd81a5bcdf9828ed"
   }
 }
