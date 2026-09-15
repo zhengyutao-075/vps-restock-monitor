@@ -48,7 +48,21 @@ jobs:
           git add -A state
           if git diff --cached --quiet; then
             echo "state unchanged"
-          else
-            git commit -m "state: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
-            git push
+            exit 0
           fi
+          git commit -m "state: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+
+          # 两次运行可能重叠（例如手动触发撞上定时器，或 GitHub 自带 cron 若哪天恢复）。
+          # 此时后一次的 push 会被拒。通知早在 Poll 步骤就已发出，所以状态回写是
+          # 尽力而为：重试若干次；仍失败也只告警、不判死，避免把一次「通知已成功」
+          # 的运行误标成 failure。
+          for i in 1 2 3 4 5; do
+            if git pull --rebase --no-edit origin main >/dev/null 2>&1 && git push >/dev/null 2>&1; then
+              echo "state pushed (attempt $i)"
+              exit 0
+            fi
+            git rebase --abort >/dev/null 2>&1 || true
+            sleep 4
+          done
+          echo "::warning::state push failed after 5 attempts; notification was already delivered, state will be rebuilt on the next run"
+          exit 0
