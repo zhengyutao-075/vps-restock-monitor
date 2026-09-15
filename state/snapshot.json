@@ -281,7 +281,7 @@
     "id": "1226",
     "postedAt": "2026-09-15T05:47:11+00:00",
     "edited": true,
-    "marker": "有货",
+    "marker": "缺货",
     "vendor": "VMISS",
     "model": "VMISS - US.LA.9929.Core",
     "cpu": "1 vCPU",
@@ -293,8 +293,8 @@
     "ipType": "原生机房IP",
     "line": "9929",
     "coupon": "10%OFF",
-    "statusText": "✅ 有货",
-    "alert": "",
+    "statusText": "❌ 缺货",
+    "alert": "该配置已经被抢光，此消息3分钟后删除",
     "buyUrl": "https://app.vmiss.com",
     "priceRaw": "10 CAD/月",
     "priceValue": 10,
@@ -313,13 +313,13 @@
       }
     ],
     "reportable": true,
-    "fp": "de7ccee85a5d820c"
+    "fp": "265fbb521551e8a1"
   },
   "1227": {
     "id": "1227",
     "postedAt": "2026-09-15T05:47:12+00:00",
     "edited": true,
-    "marker": "有货",
+    "marker": "缺货",
     "vendor": "VMISS",
     "model": "VMISS - US.LA.9929.Pro",
     "cpu": "1 vCPU",
@@ -331,8 +331,8 @@
     "ipType": "原生机房IP",
     "line": "9929",
     "coupon": "10%OFF",
-    "statusText": "✅ 有货",
-    "alert": "",
+    "statusText": "❌ 缺货",
+    "alert": "该配置已经被抢光，此消息3分钟后删除",
     "buyUrl": "https://app.vmiss.com",
     "priceRaw": "16 CAD/月",
     "priceValue": 16,
@@ -347,7 +347,7 @@
       }
     ],
     "reportable": true,
-    "fp": "0480e6df3405dbeb"
+    "fp": "9b6f21436727a3f2"
   },
   "1236": {
     "id": "1236",
