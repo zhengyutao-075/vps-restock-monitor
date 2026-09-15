@@ -350,7 +350,20 @@ async function notify(title, message) {
 // ---------------------------------------------------------------- 状态
 
 const loadSnapshot = () => (existsSync(SNAPSHOT) ? JSON.parse(readFileSync(SNAPSHOT, 'utf8')) : null);
-const saveSnapshot = (map) => { if (!DRY) writeFileSync(SNAPSHOT, JSON.stringify(map, null, 2), 'utf8'); };
+// 持久化时剔除「每轮都变但无意义」的字段。否则云端每 5 分钟就会产生一次
+// 无意义的 state 提交（一天近 300 次，一年十万次），长期会把仓库历史撑爆。
+// 注意：这些字段不进指纹，所以剔除它们不影响变化检测。
+const VOLATILE_FIELDS = ['monitorTime'];
+const saveSnapshot = (map) => {
+  if (DRY) return;
+  const slim = {};
+  for (const [id, r] of Object.entries(map)) {
+    const copy = { ...r };
+    for (const k of VOLATILE_FIELDS) delete copy[k];
+    slim[id] = copy;
+  }
+  writeFileSync(SNAPSHOT, JSON.stringify(slim, null, 2), 'utf8');
+};
 const ledger = (entry) => { if (!DRY) appendFileSync(LEDGER, JSON.stringify(entry) + '\n'); };
 
 function diff(prev, next) {

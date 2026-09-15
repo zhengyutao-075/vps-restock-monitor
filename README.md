@@ -28,6 +28,36 @@ node monitor.mjs --status
 powershell -NoProfile -ExecutionPolicy Bypass -File stop.ps1
 ```
 
+## 当前部署形态（双通道，互不重复）
+
+```
+┌─ 本机 Windows 守护进程（60 秒）──→ Windows 桌面通知      ← 你在电脑前时的快速通道
+│    state-local/  （不提交，保持 git 工作区干净）
+│
+└─ GitHub Actions 定时任务（5 分钟）→ WxPusher → 微信       ← 你关机/关代理时的兜底
+     state/        （每轮提交回仓库，同时避免 60 天不活跃被停用）
+```
+
+| 项目 | 值 |
+|---|---|
+| 仓库 | https://github.com/zhengyutao-075/vps-restock-monitor （公开，Actions 免费用量不限） |
+| 推送通道 | WxPusher 极简推送 SPT（无需注册 / 无需实名） |
+| 密钥存放 | GitHub Secret `WXPUSHER_SPT` —— **绝不写进 `config.json`**（公开仓库会泄漏） |
+| 本机通道 | 仅 `windows`；云端由 `NOTIFY_CHANNELS=wxpusher` 覆盖 → **同一事件不会重复推送** |
+
+### 常用操作
+
+```powershell
+# 手动从云端发一条测试推送（验证微信链路）
+gh workflow run monitor.yml -f test=true
+
+# 手动触发一次真实轮询
+gh workflow run monitor.yml
+
+# 查看云端运行记录
+gh run list --workflow=monitor.yml --limit 5
+```
+
 ## 它会通知你什么
 
 每 60 秒抓一次，比对后产出三类事件：
