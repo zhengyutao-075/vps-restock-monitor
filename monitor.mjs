@@ -43,10 +43,14 @@ const REBUILD = flag('rebuild');
 
 const cfg = JSON.parse(readFileSync(join(ROOT, 'config.json'), 'utf8'));
 const at = (rel) => (isAbsolute(rel) ? rel : join(ROOT, rel));
-const SNAPSHOT = at(cfg.paths.snapshot);
-const LEDGER = at(cfg.paths.ledger);
+// 本地与云端共用同一套代码，但状态必须分开：云端把 state/ 提交回仓库，
+// 本地若也写 state/ 会持续弄脏 git 工作区、阻塞 git pull。
+// 本地由 start.ps1 设 MONITOR_STATE_DIR=state-local 隔离。
+const LOCAL_STATE_DIR = process.env.MONITOR_STATE_DIR ? at(process.env.MONITOR_STATE_DIR) : null;
+const SNAPSHOT = LOCAL_STATE_DIR ? join(LOCAL_STATE_DIR, 'snapshot.json') : at(cfg.paths.snapshot);
+const LEDGER = LOCAL_STATE_DIR ? join(LOCAL_STATE_DIR, 'ledger.jsonl') : at(cfg.paths.ledger);
 const LOGFILE = at(cfg.paths.log);
-const PIDFILE = at(cfg.paths.pid || 'state/monitor.pid');
+const PIDFILE = LOCAL_STATE_DIR ? join(LOCAL_STATE_DIR, 'monitor.pid') : at(cfg.paths.pid || 'state/monitor.pid');
 
 for (const d of [dirname(SNAPSHOT), dirname(LEDGER), dirname(LOGFILE), dirname(PIDFILE)]) {
   if (!existsSync(d)) mkdirSync(d, { recursive: true });

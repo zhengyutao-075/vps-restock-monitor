@@ -4,9 +4,14 @@
 $ErrorActionPreference = 'Stop'
 $root = Split-Path -Parent $MyInvocation.MyCommand.Path
 $entry = Join-Path $root 'monitor.mjs'
-$pidFile = Join-Path $root 'state\monitor.pid'
+
+# Local state lives in state-local/ so the tracked state/ (committed by the cloud
+# workflow) never gets dirtied by this machine.
+$stateDir = Join-Path $root 'state-local'
+$pidFile = Join-Path $stateDir 'monitor.pid'
 
 if (-not (Test-Path $entry)) { throw "monitor.mjs not found at $entry" }
+if (-not (Test-Path $stateDir)) { New-Item -ItemType Directory -Path $stateDir | Out-Null }
 
 $node = (Get-Command node -ErrorAction Stop).Source
 
@@ -26,12 +31,13 @@ if (Test-Path $pidFile) {
   Remove-Item $pidFile -Force -ErrorAction SilentlyContinue
 }
 
+$env:MONITOR_STATE_DIR = 'state-local'
 Start-Process -FilePath $node -ArgumentList @($entry) -WorkingDirectory $root -WindowStyle Hidden
 Start-Sleep -Seconds 4
 
 if (Test-Path $pidFile) {
   $newPid = (Get-Content $pidFile -Raw).Trim()
-  Write-Output ("started (pid " + $newPid + ")")
+  Write-Output ("started (pid " + $newPid + ", state=" + $stateDir + ")")
   Write-Output ("log: " + (Join-Path $root 'logs\monitor.log'))
 } else {
   Write-Output 'failed to start - check logs\monitor.log'

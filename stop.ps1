@@ -3,7 +3,7 @@
 
 $ErrorActionPreference = 'Stop'
 $root = Split-Path -Parent $MyInvocation.MyCommand.Path
-$pidFile = Join-Path $root 'state\monitor.pid'
+$pidFile = Join-Path $root 'state-local\monitor.pid'
 
 if (-not (Test-Path $pidFile)) { Write-Output 'not running (no pid file)'; exit 0 }
 
