@@ -183,7 +183,7 @@
   "1246": {
     "id": "1246",
     "postedAt": "2026-09-16T09:20:40+00:00",
-    "edited": false,
+    "edited": true,
     "marker": "有货",
     "vendor": "ZgoVPS",
     "model": "los-angeles-amd-optimised-vps-Starter",
@@ -225,7 +225,7 @@
   "1247": {
     "id": "1247",
     "postedAt": "2026-09-16T09:20:41+00:00",
-    "edited": false,
+    "edited": true,
     "marker": "有货",
     "vendor": "ZgoVPS",
     "model": "los-angeles-amd-optimised-vps-Standard",
