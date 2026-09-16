@@ -35,3 +35,4 @@
 {"ts":"2026-09-16T04:47:52.246Z","kind":"event","id":null,"line":"【下架/删除】VMISS·VMISS - US.LA.CMIN2.Elite·CMIN2 · 30 CAD/月 (月均21.6USD)"}
 {"ts":"2026-09-16T04:47:52.246Z","kind":"event","id":null,"line":"【下架/删除】VMISS·VMISS - US.LA.CN2.Elite·CN2GIA · 38 CAD/月 (月均27.36USD) [电信/联通优质线路]"}
 {"ts":"2026-09-16T05:53:53.796Z","kind":"event","id":null,"line":"【变化】标记 有货→缺货; 状态 ✅ 有货→❌ 缺货 ⚠️该配置已经被抢光，此消息3分钟后删除 | novixlink·LAX-CUPG Lite 轻量版·9929/CMIN2 · 7.99 CAD/月 (月均5.75USD) [电信/联通优质线路/超低价(月均 <= 10)]"}
+{"ts":"2026-09-16T05:59:06.519Z","kind":"removed-soldout-silent","id":"1244","line":"novixlink·LAX-CUPG Lite 轻量版·9929/CMIN2 · 7.99 CAD/月 (月均5.75USD) [电信/联通优质线路/超低价(月均 <= 10)] · 该配置已经被抢光，此消息3分钟后删除"}

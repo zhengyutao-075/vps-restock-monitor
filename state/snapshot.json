@@ -179,43 +179,5 @@
     "categories": [],
     "reportable": true,
     "fp": "f87752d68863d632"
-  },
-  "1244": {
-    "id": "1244",
-    "postedAt": "2026-09-16T04:28:29+00:00",
-    "edited": true,
-    "marker": "缺货",
-    "vendor": "novixlink",
-    "model": "LAX-CUPG Lite 轻量版",
-    "cpu": "1 vCPU",
-    "ram": "0.75GB",
-    "disk": "10 GB RAID10 SSD 硬盘",
-    "bandwidth": "100Mbps",
-    "traffic": "500GB/月",
-    "region": "洛杉矶",
-    "ipType": "原生住宅IP",
-    "line": "9929/CMIN2",
-    "coupon": "无",
-    "statusText": "❌ 缺货",
-    "alert": "该配置已经被抢光，此消息3分钟后删除",
-    "buyUrl": "https://novixlink.com",
-    "priceRaw": "7.99 CAD/月",
-    "priceValue": 7.99,
-    "priceCurrency": "CAD",
-    "pricePeriod": "月",
-    "monthlyLocal": 7.99,
-    "monthlyUSD": 5.75,
-    "categories": [
-      {
-        "id": "ct-cu",
-        "label": "电信/联通优质线路"
-      },
-      {
-        "id": "ultra-low",
-        "label": "超低价(月均 <= 10)"
-      }
-    ],
-    "reportable": true,
-    "fp": "7b8ce832741b28b9"
   }
 }
