@@ -179,43 +179,5 @@
     "categories": [],
     "reportable": true,
     "fp": "f87752d68863d632"
-  },
-  "1245": {
-    "id": "1245",
-    "postedAt": "2026-09-16T07:48:04+00:00",
-    "edited": true,
-    "marker": "缺货",
-    "vendor": "VMISS",
-    "model": "VMISS - US.LA.CN2.Basic",
-    "cpu": "1 vCPU",
-    "ram": "1GB",
-    "disk": "10GB SSD",
-    "bandwidth": "200Mbps",
-    "traffic": "300GB/月",
-    "region": "洛杉矶",
-    "ipType": "原生机房IP",
-    "line": "CN2GIA",
-    "coupon": "10%OFF",
-    "statusText": "❌ 缺货",
-    "alert": "该配置已经被抢光，此消息3分钟后删除",
-    "buyUrl": "https://app.vmiss.com",
-    "priceRaw": "6 CAD/月",
-    "priceValue": 6,
-    "priceCurrency": "CAD",
-    "pricePeriod": "月",
-    "monthlyLocal": 6,
-    "monthlyUSD": 4.32,
-    "categories": [
-      {
-        "id": "ct-cu",
-        "label": "电信/联通优质线路"
-      },
-      {
-        "id": "ultra-low",
-        "label": "超低价(月均 <= 10)"
-      }
-    ],
-    "reportable": true,
-    "fp": "16a726d7dd7c57c5"
   }
 }
