@@ -49,3 +49,4 @@
 {"ts":"2026-09-16T13:29:02.951Z","kind":"event","id":null,"line":"【新上架】VMISS·VMISS - US.LA.CN2.Basic·CN2GIA · 6 CAD/月 (月均4.32USD) [电信/联通优质线路/超低价(月均 <= 10)]"}
 {"ts":"2026-09-16T13:38:59.817Z","kind":"event","id":null,"line":"【变化】标记 有货→缺货; 状态 ✅ 有货→❌ 缺货 ⚠️该配置已经被抢光，此消息3分钟后删除 | VMISS·VMISS - US.LA.CN2.Basic·CN2GIA · 6 CAD/月 (月均4.32USD) [电信/联通优质线路/超低价(月均 <= 10)]"}
 {"ts":"2026-09-16T13:49:03.320Z","kind":"removed-soldout-silent","id":"1249","line":"VMISS·VMISS - US.LA.CN2.Basic·CN2GIA · 6 CAD/月 (月均4.32USD) [电信/联通优质线路/超低价(月均 <= 10)] · 该配置已经被抢光，此消息3分钟后删除"}
+{"ts":"2026-09-16T17:33:16.797Z","kind":"event","id":null,"line":"【新上架】VMISS·VMISS - US.LA.CMIN2.Basic·CMIN2 · 5 CAD/月 (月均3.6USD) [超低价(月均 <= 10)]"}
