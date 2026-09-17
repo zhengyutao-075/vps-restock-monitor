@@ -263,5 +263,39 @@
     ],
     "reportable": true,
     "fp": "435b2ad9174800a1"
+  },
+  "1252": {
+    "id": "1252",
+    "postedAt": "2026-09-17T04:48:13+00:00",
+    "edited": false,
+    "marker": "有货",
+    "vendor": "VMISS",
+    "model": "VMISS - US.LA.CN2.Pro",
+    "cpu": "1 vCPU",
+    "ram": "2GB",
+    "disk": "20GB SSD",
+    "bandwidth": "500Mbps",
+    "traffic": "1000GB/月",
+    "region": "洛杉矶",
+    "ipType": "原生机房IP",
+    "line": "CN2GIA",
+    "coupon": "10%OFF",
+    "statusText": "✅ 有货",
+    "alert": "",
+    "buyUrl": "https://app.vmiss.com",
+    "priceRaw": "20 CAD/月",
+    "priceValue": 20,
+    "priceCurrency": "CAD",
+    "pricePeriod": "月",
+    "monthlyLocal": 20,
+    "monthlyUSD": 14.4,
+    "categories": [
+      {
+        "id": "ct-cu",
+        "label": "电信/联通优质线路"
+      }
+    ],
+    "reportable": true,
+    "fp": "6d13e3fbbeaca40d"
   }
 }
