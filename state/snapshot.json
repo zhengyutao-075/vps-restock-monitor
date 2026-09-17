@@ -121,7 +121,7 @@
     "id": "1204",
     "postedAt": "2026-09-14T07:51:14+00:00",
     "edited": true,
-    "marker": "有货",
+    "marker": "缺货",
     "vendor": "VMISS",
     "model": "VMISS - US.LA.CN2.Pro",
     "cpu": "1 vCPU",
@@ -133,8 +133,8 @@
     "ipType": "原生机房IP",
     "line": "CN2GIA",
     "coupon": "10%OFF",
-    "statusText": "✅ 有货",
-    "alert": "",
+    "statusText": "❌ 缺货",
+    "alert": "该配置已经被抢光，此消息3分钟后删除",
     "buyUrl": "https://app.vmiss.com",
     "priceRaw": "20 CAD/月",
     "priceValue": 20,
@@ -149,7 +149,7 @@
       }
     ],
     "reportable": true,
-    "fp": "6d13e3fbbeaca40d"
+    "fp": "fe57cc4a110f4ba3"
   },
   "1208": {
     "id": "1208",
