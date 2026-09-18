@@ -301,5 +301,39 @@
     ],
     "reportable": true,
     "fp": "426a3dc1ff450256"
+  },
+  "1254": {
+    "id": "1254",
+    "postedAt": "2026-09-18T03:07:58+00:00",
+    "edited": false,
+    "marker": "有货",
+    "vendor": "VMISS",
+    "model": "VMISS - US.LA.CMIN2.Core",
+    "cpu": "1 vCPU",
+    "ram": "1GB",
+    "disk": "15GB SSD",
+    "bandwidth": "200Mbps",
+    "traffic": "800GB/月",
+    "region": "洛杉矶",
+    "ipType": "原生机房IP",
+    "line": "CMIN2",
+    "coupon": "10%OFF",
+    "statusText": "✅ 有货",
+    "alert": "",
+    "buyUrl": "https://app.vmiss.com",
+    "priceRaw": "10 CAD/月",
+    "priceValue": 10,
+    "priceCurrency": "CAD",
+    "pricePeriod": "月",
+    "monthlyLocal": 10,
+    "monthlyUSD": 7.2,
+    "categories": [
+      {
+        "id": "ultra-low",
+        "label": "超低价(月均 <= 10)"
+      }
+    ],
+    "reportable": true,
+    "fp": "ed4957c6586df83e"
   }
 }
