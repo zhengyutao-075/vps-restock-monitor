@@ -306,7 +306,7 @@
     "id": "1255",
     "postedAt": "2026-09-18T04:15:45+00:00",
     "edited": true,
-    "marker": "有货",
+    "marker": "缺货",
     "vendor": "novixlink",
     "model": "LAX-CUPG Lite 轻量版",
     "cpu": "1 vCPU",
@@ -318,8 +318,8 @@
     "ipType": "原生住宅IP",
     "line": "9929/CMIN2",
     "coupon": "无",
-    "statusText": "✅ 有货",
-    "alert": "",
+    "statusText": "❌ 缺货",
+    "alert": "该配置已经被抢光，此消息3分钟后删除",
     "buyUrl": "https://novixlink.com",
     "priceRaw": "7.99 CAD/月",
     "priceValue": 7.99,
@@ -338,6 +338,6 @@
       }
     ],
     "reportable": true,
-    "fp": "4186442fefe7f33a"
+    "fp": "7b8ce832741b28b9"
   }
 }
