@@ -305,7 +305,7 @@
   "1257": {
     "id": "1257",
     "postedAt": "2026-09-19T05:09:20+00:00",
-    "edited": false,
+    "edited": true,
     "marker": "有货",
     "vendor": "novixlink",
     "model": "LAX-CUPG Lite 轻量版",
@@ -343,7 +343,7 @@
   "1258": {
     "id": "1258",
     "postedAt": "2026-09-19T05:09:21+00:00",
-    "edited": false,
+    "edited": true,
     "marker": "有货",
     "vendor": "novixlink",
     "model": "LAX-CUPG Basic 基础版",
