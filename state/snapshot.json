@@ -349,7 +349,7 @@
     "id": "1262",
     "postedAt": "2026-09-22T07:42:55+00:00",
     "edited": true,
-    "marker": "有货",
+    "marker": "缺货",
     "vendor": "VMISS",
     "model": "VMISS - US.LA.CMIN2.Pro",
     "cpu": "1 vCPU",
@@ -361,8 +361,8 @@
     "ipType": "原生机房IP",
     "line": "CMIN2",
     "coupon": "10%OFF",
-    "statusText": "✅ 有货",
-    "alert": "",
+    "statusText": "❌ 缺货",
+    "alert": "该配置已经被抢光，此消息3分钟后删除",
     "buyUrl": "https://app.vmiss.com",
     "priceRaw": "16 CAD/月",
     "priceValue": 16,
@@ -372,6 +372,6 @@
     "monthlyUSD": 11.52,
     "categories": [],
     "reportable": true,
-    "fp": "f87752d68863d632"
+    "fp": "a58a353e936824c9"
   }
 }
