@@ -79,44 +79,6 @@
     "reportable": false,
     "fp": "98d93606df93407f"
   },
-  "1198": {
-    "id": "1198",
-    "postedAt": "2026-09-14T02:07:17+00:00",
-    "edited": true,
-    "marker": "缺货",
-    "vendor": "VMRack",
-    "model": "VMRack - L3.VPS.2C2G.Base",
-    "cpu": "2 vCPU",
-    "ram": "2GB",
-    "disk": "40GB 系统盘",
-    "bandwidth": "500Mbps",
-    "traffic": "1500GB/月",
-    "region": "洛杉矶",
-    "ipType": "原生机房IP",
-    "line": "CN2GIA/9929/CMIN2",
-    "coupon": "无",
-    "statusText": "❌ 缺货",
-    "alert": "该配置已经被抢光，此消息3分钟后删除",
-    "buyUrl": "https://www.vmrack.net",
-    "priceRaw": "13.99 USD/月",
-    "priceValue": 13.99,
-    "priceCurrency": "USD",
-    "pricePeriod": "月",
-    "monthlyLocal": 13.99,
-    "monthlyUSD": 13.99,
-    "categories": [
-      {
-        "id": "three-net",
-        "label": "三网优化(移动/电信/联通)"
-      },
-      {
-        "id": "ct-cu",
-        "label": "电信/联通优质线路"
-      }
-    ],
-    "reportable": true,
-    "fp": "3a8591604d56e69b"
-  },
   "1246": {
     "id": "1246",
     "postedAt": "2026-09-16T09:20:40+00:00",

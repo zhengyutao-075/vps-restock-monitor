@@ -92,3 +92,4 @@
 {"ts":"2026-09-23T07:38:19.346Z","kind":"event","id":null,"line":"【变化】标记 有货→缺货; 状态 ✅ 有货→❌ 缺货 ⚠️该配置已经被抢光，此消息3分钟后删除 | novixlink·LAX-CUPG Lite 轻量版·9929/CMIN2 · 7.99 CAD/月 (月均5.75USD) [电信/联通优质线路/超低价(月均 <= 10)]"}
 {"ts":"2026-09-23T07:47:49.669Z","kind":"removed-soldout-silent","id":"1263","line":"novixlink·LAX-CUPG Lite 轻量版·9929/CMIN2 · 7.99 CAD/月 (月均5.75USD) [电信/联通优质线路/超低价(月均 <= 10)] · 该配置已经被抢光，此消息3分钟后删除"}
 {"ts":"2026-09-23T08:49:11.704Z","kind":"event","id":null,"line":"【变化】标记 有货→缺货; 状态 ✅ 有货→❌ 缺货 ⚠️该配置已经被抢光，此消息3分钟后删除 | VMRack·VMRack - L3.VPS.2C2G.Base·CN2GIA/9929/CMIN2 · 13.99 USD/月 (月均13.99USD) [三网优化(移动/电信/联通)/电信/联通优质线路]"}
+{"ts":"2026-09-23T08:59:25.396Z","kind":"removed-soldout-silent","id":"1198","line":"VMRack·VMRack - L3.VPS.2C2G.Base·CN2GIA/9929/CMIN2 · 13.99 USD/月 (月均13.99USD) [三网优化(移动/电信/联通)/电信/联通优质线路] · 该配置已经被抢光，此消息3分钟后删除"}
