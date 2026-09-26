@@ -1,46 +1,4 @@
 {
-  "1108": {
-    "id": "1108",
-    "postedAt": "2026-08-15T06:47:22+00:00",
-    "edited": true,
-    "marker": "有货",
-    "vendor": "NoSLA",
-    "model": "NoSLA - 圣何塞-26秋-S",
-    "cpu": "1 vCPU",
-    "ram": "1GB",
-    "disk": "20GB NVME",
-    "bandwidth": "1Gbps",
-    "traffic": "1000GB/月",
-    "region": "圣何塞",
-    "ipType": "原生机房IP",
-    "line": "CN2GIA/9929/CMIN2",
-    "coupon": "无",
-    "statusText": "✅ 有货",
-    "alert": "",
-    "buyUrl": "https://ccp.nosla.cloud",
-    "priceRaw": "81.27 USD/年",
-    "priceValue": 81.27,
-    "priceCurrency": "USD",
-    "pricePeriod": "年",
-    "monthlyLocal": 6.77,
-    "monthlyUSD": 6.77,
-    "categories": [
-      {
-        "id": "three-net",
-        "label": "三网优化(移动/电信/联通)"
-      },
-      {
-        "id": "ct-cu",
-        "label": "电信/联通优质线路"
-      },
-      {
-        "id": "ultra-low",
-        "label": "超低价(月均 <= 10)"
-      }
-    ],
-    "reportable": false,
-    "fp": "32cc7c5de678916e"
-  },
   "1109": {
     "id": "1109",
     "postedAt": "2026-08-15T06:48:51+00:00",
